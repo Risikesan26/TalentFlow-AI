@@ -26,7 +26,7 @@ import {
   Shield,
   UserCheck
 } from 'lucide-react';
-import OfficeTour from "./OfficeTour";
+
 
 const App = () => {
   const [activePage, setActivePage] = useState("main"); // 👈 State to track current page
@@ -617,7 +617,7 @@ const isLargeScreen = typeof window !== 'undefined' && window.innerWidth >= 1024
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer `,
+        'Authorization': `Bearer ${process.env.REACT_APP_GROQ_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -756,7 +756,7 @@ const getFallbackInsights = (userProfile) => {
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer `, 
+        'Authorization': `Bearer ${process.env.REACT_APP_GROQ_API_KEY}`, 
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -1523,7 +1523,7 @@ const sendMessageToHR = async (message, userProfile, conversationHistory) => {
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer `,
+        'Authorization': `Bearer ${process.env.REACT_APP_GROQ_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
