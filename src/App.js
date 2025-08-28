@@ -26,6 +26,7 @@ import {
   Shield,
   UserCheck
 } from 'lucide-react';
+import OfficeTour from "./OfficeTour";
 
 
 const App = () => {
